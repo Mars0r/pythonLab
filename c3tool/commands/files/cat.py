@@ -10,6 +10,8 @@ class CatCommand(BaseCommand):
     def run(self, args, context: ToolContext) -> str:
         # TODO: Read and return one text file.
         # 1. Require exactly one filepath.
+        self.require_count(args, 1, COMMAND_SPEC.usage)
         # 2. Use ``require_existing_file`` for a friendly missing-file error.
+        path = require_existing_file(args[0], context)
         # 3. Read as UTF-8; decide how invalid bytes should be handled.
-        raise NotImplementedError("Implement the cat command")
+        return path.read_text(encoding="utf-8", errors="replace")
