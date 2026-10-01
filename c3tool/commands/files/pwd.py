@@ -9,4 +9,5 @@ class PwdCommand(BaseCommand):
     def run(self, args, context: ToolContext) -> str:
         # TODO: Require no arguments and return ``context.cwd`` as text.
         # The context already contains an absolute, resolved working directory.
-        raise NotImplementedError("Implement the pwd command")
+        self.require_count(args, 0, COMMAND_SPEC.usage)
+        return context.cwd

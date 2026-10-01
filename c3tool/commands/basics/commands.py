@@ -9,6 +9,7 @@ class CommandsCommand(BaseCommand):
     def run(self, args, context: ToolContext) -> str:
         # TODO: Build a readable reference from ``context.registry.specs``.
         # 1. This command accepts no arguments.
+        self.require_count(args, 0, COMMAND_SPEC.usage)
         # 2. Loop over every discovered CommandSpec.
         # 3. Include its name, description, args, usage, and expected output.
         # 4. Return one string; blank lines between commands are easy to read.
