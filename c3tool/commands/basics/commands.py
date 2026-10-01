@@ -14,4 +14,7 @@ class CommandsCommand(BaseCommand):
         # 4. Return one string; blank lines between commands are easy to read.
         for command_spec in discover_command_specs():
             print(f"{command_spec.name} -> {command_spec.description}")
+            print(f"  Args: {command_spec.args}")
+            print(f"  Usage: {command_spec.usage}")
+            print(f"  Expected Output: {command_spec.expected_output}")
         return None

@@ -9,7 +9,7 @@ class ExampleCommand(BaseCommand):
     def run(self, args, context: ToolContext) -> str:
         # TODO: This is the smallest exercise in the course.
         # 1. Reject unexpected arguments with ``self.require_count``.
-        self.require_count(args,0,'Este comando no requiere de argumentos')  # This command does not accept any arguments.
+        self.require_count(args,0,COMMAND_SPEC.usage)  # This command does not accept any arguments.
         # 2. Return the exact greeting described by COMMAND_SPEC.
         # Replace this final line when your implementation is ready.
         return "Hello World"
