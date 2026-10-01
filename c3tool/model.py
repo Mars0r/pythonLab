@@ -62,4 +62,4 @@ class BaseCommand:
     @staticmethod
     def require_range(args: Sequence[str], minimum: int, maximum: int, usage: str) -> None:
         if not minimum <= len(args) <= maximum:
-            raise UsageError(f"Usage: {usage}")
+            raise UsageError(f"RG_Usage: {usage}")
